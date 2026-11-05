@@ -1,0 +1,64 @@
+{
+  "target": "natural log of transfer fee in millions of euros",
+  "training_log_r_squared": 0.4267801337208307,
+  "training_coefficients": {
+    "intercept": -2.0807680852878936,
+    "age_at_transfer": -0.020311667710070216,
+    "years_until_selling_contract_expiry": 0.42336034988206145,
+    "ln_prior_season_minutes": 0.6051145192187687,
+    "xg_per90": 0.5125191518454345,
+    "selling_league_premier_league": 0.20861359147059688
+  },
+  "training_inbound_median_fee_eur_m": 35.0,
+  "all": {
+    "deals": 37,
+    "hedonic_ols": {
+      "mae_eur_m": 18.532658093471955,
+      "rmse_eur_m": 27.062221338153734,
+      "r_squared_euro": 0.11907419906140315,
+      "r_squared_log": 0.18552246783186344
+    },
+    "ridge": {
+      "mae_eur_m": 17.780040022273482,
+      "rmse_eur_m": 26.829376004118217,
+      "r_squared_euro": 0.13416808425219284,
+      "r_squared_log": 0.19527062264351225
+    }
+  },
+  "inbound": {
+    "deals": 16,
+    "hedonic_ols": {
+      "mae_eur_m": 21.304042840585275,
+      "rmse_eur_m": 32.38396614921811,
+      "r_squared_euro": -0.08479690500250747,
+      "r_squared_log": 0.046408197316628375
+    },
+    "ridge": {
+      "mae_eur_m": 20.706435428772316,
+      "rmse_eur_m": 32.894425346620906,
+      "r_squared_euro": -0.11926512383970156,
+      "r_squared_log": 0.11137645495474624
+    },
+    "training_median_baseline": {
+      "mae_eur_m": 23.931250000000002,
+      "rmse_eur_m": 31.810154628671643,
+      "r_squared_euro": -0.04669445672906258,
+      "r_squared_log": -0.020571727507721738
+    }
+  },
+  "outbound": {
+    "deals": 21,
+    "hedonic_ols": {
+      "mae_eur_m": 16.421126857576088,
+      "rmse_eur_m": 22.16595551535645,
+      "r_squared_euro": 0.05519913976601076,
+      "r_squared_log": -0.018704433879963345
+    },
+    "ridge": {
+      "mae_eur_m": 15.550405426845796,
+      "rmse_eur_m": 21.06732848382431,
+      "r_squared_euro": 0.14653385346017345,
+      "r_squared_log": -0.01778504817430937
+    }
+  }
+}

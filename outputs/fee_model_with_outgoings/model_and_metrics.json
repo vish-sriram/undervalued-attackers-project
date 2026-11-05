@@ -1,0 +1,105 @@
+{
+  "deals": 74,
+  "unique_players": 74,
+  "target": "natural log of the fee in millions of euros",
+  "minutes_and_xg_source": "FotMob domestic league season totals",
+  "training_window": "summer_2025",
+  "holdout_window": "summer_2026",
+  "outgoing_deals": 37,
+  "training_deals": 37,
+  "training_removed_for_player_overlap": 0,
+  "holdout_deals": 37,
+  "outgoing_audit_counts": {
+    "summer_2025": {
+      "eligible": 16,
+      "identity not uniquely verified by name and exact age": 1,
+      "no name match in prior-season FotMob cache": 0,
+      "prior-season xG or minutes unavailable": 1
+    },
+    "summer_2026": {
+      "eligible": 21,
+      "identity not uniquely verified by name and exact age": 0,
+      "no name match in prior-season FotMob cache": 3,
+      "prior-season xG or minutes unavailable": 2
+    }
+  },
+  "seller_dummy": {
+    "alpha": 10,
+    "final_coefficients": {
+      "intercept": 0.2071467000397389,
+      "age_at_transfer": -0.07378176585336214,
+      "years_until_selling_contract_expiry": 0.3214986903761049,
+      "ln_prior_season_minutes": 0.47074248213256864,
+      "xg_per90": 1.5745251918706826,
+      "selling_league_premier_league": -0.15935947472003578
+    },
+    "holdout_all": {
+      "n": 37,
+      "mae_eur_m": 17.780040022273482,
+      "rmse_eur_m": 26.829376004118217,
+      "pearson_r": 0.42146066013491723,
+      "r_squared_euro": 0.13416808425219273,
+      "r_squared_log": 0.19527062264351214
+    },
+    "holdout_inbound": {
+      "n": 16,
+      "mae_eur_m": 20.706435428772316,
+      "rmse_eur_m": 32.894425346620906,
+      "pearson_r": 0.41663035351940114,
+      "r_squared_euro": -0.11926512383970178,
+      "r_squared_log": 0.11137645495474613
+    },
+    "holdout_outbound": {
+      "n": 21,
+      "mae_eur_m": 15.550405426845796,
+      "rmse_eur_m": 21.06732848382431,
+      "pearson_r": 0.41936241738669655,
+      "r_squared_euro": 0.14653385346017345,
+      "r_squared_log": -0.01778504817430937
+    }
+  },
+  "seller_and_buyer_dummies": {
+    "alpha": 10,
+    "final_coefficients": {
+      "intercept": -0.2593229574027447,
+      "age_at_transfer": -0.053526698684413884,
+      "years_until_selling_contract_expiry": 0.29636767519817314,
+      "ln_prior_season_minutes": 0.36094509829082544,
+      "xg_per90": 1.6399628998889062,
+      "selling_league_premier_league": 0.282707951600053,
+      "buying_league_premier_league": 0.9003110630761036
+    },
+    "holdout_all": {
+      "n": 37,
+      "mae_eur_m": 17.076385000069777,
+      "rmse_eur_m": 26.61481813780023,
+      "pearson_r": 0.47066017170461794,
+      "r_squared_euro": 0.14796104248437403,
+      "r_squared_log": 0.2593235012248414
+    },
+    "holdout_inbound": {
+      "n": 16,
+      "mae_eur_m": 20.963833642559983,
+      "rmse_eur_m": 32.150089072134406,
+      "pearson_r": 0.3021529997303676,
+      "r_squared_euro": -0.06918467367467485,
+      "r_squared_log": -0.07812798151198863
+    },
+    "holdout_outbound": {
+      "n": 21,
+      "mae_eur_m": 14.114519367696298,
+      "rmse_eur_m": 21.459645971055537,
+      "pearson_r": 0.4345741876670357,
+      "r_squared_euro": 0.11445125627018393,
+      "r_squared_log": 0.11800425422952132
+    }
+  },
+  "inbound_only_same_minutes_source": {
+    "n": 16,
+    "mae_eur_m": 21.799676329883766,
+    "rmse_eur_m": 30.782051412867077,
+    "pearson_r": 0.4175644405166828,
+    "r_squared_euro": 0.01987045182372793,
+    "r_squared_log": 0.09588133138250465
+  }
+}

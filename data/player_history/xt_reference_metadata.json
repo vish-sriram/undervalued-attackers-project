@@ -1,0 +1,8 @@
+{
+  "league": "ENG-Premier League",
+  "season": "2024/25",
+  "games": 380,
+  "actions": 606295,
+  "trained_through": "2025-05-25",
+  "direction": "Undo away-team mirror introduced by Opta converter"
+}

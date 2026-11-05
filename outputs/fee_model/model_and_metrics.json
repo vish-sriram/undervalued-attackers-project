@@ -1,0 +1,85 @@
+{
+  "source_sha256": "8ed3c3f1aafaabe9d432e4a31e3268db408fd9905bdb2086c266de6475992296",
+  "target": "natural log of transfer fee in millions of euros",
+  "alpha": 100,
+  "training_window": "summer_2025",
+  "holdout_window": "summer_2026",
+  "training_loo_mae_eur_m_by_alpha": {
+    "0.01": 24.682956565818753,
+    "0.1": 24.639409319094106,
+    "1": 24.235702410600727,
+    "10": 22.017840486979715,
+    "100": 21.375611326335473
+  },
+  "holdout": {
+    "n": 16,
+    "mae_eur_m": 21.81288170719435,
+    "median_absolute_error_eur_m": 17.891783451800002,
+    "rmse_eur_m": 30.79049133345572,
+    "bias_pred_minus_actual_eur_m": -7.495089660204576,
+    "pearson_r_euro": 0.41328508841166517,
+    "r_squared_euro": 0.019332908078291133,
+    "pearson_r_log": 0.4943860082362136,
+    "r_squared_log": 0.0949846186876957
+  },
+  "holdout_2025_median_baseline": {
+    "n": 16,
+    "mae_eur_m": 23.931250000000002,
+    "median_absolute_error_eur_m": 19.925,
+    "rmse_eur_m": 31.810154628671643,
+    "bias_pred_minus_actual_eur_m": -6.71875,
+    "pearson_r_euro": null,
+    "r_squared_euro": -0.04669445672906258,
+    "pearson_r_log": null,
+    "r_squared_log": -0.020571727507721738
+  },
+  "final_refit_in_sample": {
+    "n": 37,
+    "mae_eur_m": 20.19379411998468,
+    "median_absolute_error_eur_m": 12.718123958883023,
+    "rmse_eur_m": 30.25412895033584,
+    "bias_pred_minus_actual_eur_m": -9.737505919054694,
+    "pearson_r_euro": 0.45784847745800217,
+    "r_squared_euro": 0.019436982108158585,
+    "pearson_r_log": 0.6489763772401254,
+    "r_squared_log": 0.20965405114655644
+  },
+  "final_model": {
+    "terms": [
+      "intercept",
+      "age_at_transfer",
+      "years_until_selling_contract_expiry",
+      "ln_prior_season_minutes",
+      "xg_per90"
+    ],
+    "coefficients": [
+      3.0269614800637923,
+      -0.022864642948162144,
+      0.09162077457659729,
+      0.10581245550627122,
+      0.06922303669312445
+    ],
+    "feature_means": [
+      23.675675675675677,
+      2.3018665482731184,
+      7.424639444500485,
+      0.3445742788041579
+    ],
+    "feature_scales": [
+      3.049626065283574,
+      1.187662829563884,
+      0.5624411366438241,
+      0.17101803999615517
+    ]
+  },
+  "auxiliary_ols": {
+    "log_r_squared": 0.4368112802319787,
+    "log_adjusted_r_squared": 0.366412690260976,
+    "hc3_joint_f": 5.6351153931613105,
+    "f_df": [
+      4,
+      32
+    ],
+    "hc3_joint_p": 0.001501151526089113
+  }
+}

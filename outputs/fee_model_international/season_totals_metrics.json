@@ -1,0 +1,32 @@
+{
+  "target": "natural log of fee in EUR millions",
+  "alpha": 10,
+  "train_n": 27,
+  "test_n": 25,
+  "holdout_all": {
+    "mae_eur_m": 16.205504871652124,
+    "rmse_eur_m": 23.313943784510393,
+    "r_squared_euro": 0.4430056633891989,
+    "r_squared_log": 0.43607592557401587
+  },
+  "holdout_arrivals": {
+    "mae_eur_m": 16.130287835521134,
+    "rmse_eur_m": 23.339983829903705,
+    "r_squared_euro": 0.4867340225371778,
+    "r_squared_log": 0.5699977051871519
+  },
+  "coefficients": {
+    "intercept": 2.2837931457630427,
+    "numeric__age_at_transfer": -0.07181183828758742,
+    "numeric__years_until_selling_contract_expiry": 0.19285042794741436,
+    "numeric__ln_prior_season_minutes": 0.27187737407741525,
+    "numeric__total_xg": 0.03986820698427308,
+    "numeric__total_xt_added": 0.05257194999929826,
+    "numeric__is_winger": -0.26437141272599524,
+    "numeric__tournament_appearances": 0.06043373326450603,
+    "league__selling_club_league_Premier League": 0.3006329267862536,
+    "league__selling_club_league_infrequent_sklearn": -0.29452871840573736,
+    "league__buying_club_league_infrequent_sklearn": -0.3418404185208667
+  },
+  "isak_leave_out_alpha": 10
+}

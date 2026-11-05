@@ -1,0 +1,16 @@
+{
+  "403784": {
+    "selling_club": "Liverpool",
+    "selling_club_league": "Premier League",
+    "selling_contract_expiry": "2031-06-30",
+    "sources": ["https://www.transfermarkt.co.uk/hugo-ekitike/profil/spieler/709726/1000/", "https://www.liverpoolfc.com/news/liverpool-v-fulham-team-news-3"],
+    "note": "Profile season is stale while injured; club and contract corroborated. Model does not adjust for current injury."
+  },
+  "458728": {
+    "selling_club": "Strasbourg",
+    "selling_club_league": "Ligue 1",
+    "selling_contract_expiry": "2030-06-30",
+    "sources": ["https://www.transfermarkt.us/joaquin-panichelli/profil/spieler/1064871"],
+    "note": "Club and contract corroborated by Transfermarkt; FotMob mainLeague season is stale."
+  }
+}

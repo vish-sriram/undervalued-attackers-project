@@ -1,0 +1,19 @@
+{
+  "state": "finished_with_source_gaps",
+  "summary": {
+    "target_players": 71,
+    "players_with_observed_event_data": 69,
+    "requested_prior_seasons": 1,
+    "players_with_requested_prior_season_observed": 69,
+    "observed_player_matches": 1804,
+    "player_season_rows": 69,
+    "xg_source_player_league_seasons": 75,
+    "processing_errors": 34,
+    "xt_reference_trained_through": "2025-05-25",
+    "model_ready_players": 37,
+    "collection_finished": true,
+    "collection_complete": false
+  },
+  "message": "Review coverage_audit.csv and model_ready_features.csv before fitting.",
+  "updated_at": "2026-11-05T05:17:51.807092+00:00"
+}

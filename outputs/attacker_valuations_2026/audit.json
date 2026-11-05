@@ -1,0 +1,18 @@
+{
+  "players": 34,
+  "priced": 32,
+  "withheld": 2,
+  "raw_events": 45324,
+  "actions": 43800,
+  "scored_actions": 27021,
+  "eligible_missing_coordinates": 1,
+  "valuation_date": "2026-11-05",
+  "reviewed_on": "2026-11-05",
+  "checks": [
+    "unique actions and player matches",
+    "all non-null xT scores recomputed",
+    "raw event counts reconciled",
+    "all 14 saved holdout predictions reproduced"
+  ],
+  "limitation": "Internal consistency and source corroboration, not independent video accuracy."
+}

@@ -1,0 +1,24 @@
+{
+  "training_deals": 19,
+  "test_deals": 14,
+  "alpha": 10,
+  "target": "natural log of transfer fee in EUR millions",
+  "arrivals_only": {
+    "mae_eur_m": 13.792397047254903,
+    "rmse_eur_m": 17.920707437294105,
+    "r_squared_euro": 0.6974120176632701,
+    "r_squared_log": 0.397176985729336
+  },
+  "pooled_comparison": {
+    "mae_eur_m": 16.130287835521134,
+    "rmse_eur_m": 23.339983829903705,
+    "r_squared_euro": 0.4867340225371778,
+    "r_squared_log": 0.5699977051871519
+  },
+  "training_median_baseline": {
+    "mae_eur_m": 26.264285714285716,
+    "rmse_eur_m": 32.642801656720586,
+    "r_squared_euro": -0.003959579780468125,
+    "r_squared_log": -0.09857307251883984
+  }
+}
