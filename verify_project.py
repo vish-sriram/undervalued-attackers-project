@@ -3,13 +3,13 @@ import json
 
 import numpy as np
 import pandas as pd
+from sklearn.metrics import mean_absolute_error, r2_score
 
 from fit_fee_arrivals_only import FEATURES, LEAGUES, OUT, fit
-from fit_fee_hedonic import metrics
 from predict_transfer_fee import predict_fees
 
 
-def main():
+def verify():
     deals = pd.read_csv(OUT / "model_deals.csv")
     train = deals[deals.window.eq("summer_2025")]
     test = deals[deals.window.eq("summer_2026")]
@@ -30,7 +30,13 @@ def main():
     np.testing.assert_allclose(predict_fees(test).predicted_fee_eur, expected * 1e6, rtol=0, atol=.005001)
     report = json.loads((OUT / "metrics.json").read_text())
     assert alpha == report["alpha"] == 10
-    for key, value in metrics(actual, expected).items():
+    scores = {
+        "mae_eur_m": mean_absolute_error(actual, expected),
+        "rmse_eur_m": np.sqrt(np.mean((actual - expected) ** 2)),
+        "r_squared_euro": r2_score(actual, expected),
+        "r_squared_log": r2_score(np.log(actual), np.log(expected)),
+    }
+    for key, value in scores.items():
         np.testing.assert_allclose(value, report["arrivals_only"][key])
 
     shortlist = OUT.parent.parent / "attacker_valuations_2026"
@@ -46,8 +52,4 @@ def main():
     np.testing.assert_allclose(filtered.predicted_fee_eur,
                                filtered.whoscored_player_id.map(players.set_index("whoscored_player_id").predicted_fee_eur),
                                equal_nan=True)
-    print("Verified the 19-deal refit, 14 holdout predictions, 32 shortlist estimates and seven-player filter.")
-
-
-if __name__ == "__main__":
-    main()
+    return scores

@@ -4,7 +4,6 @@ Input CSV columns: age_at_transfer, years_until_selling_contract_expiry,
 prior_season_minutes, total_xg, total_xt_added, is_winger (0 or 1),
 tournament_appearances, selling_club_league. Extra columns are preserved.
 """
-import argparse
 from pathlib import Path
 
 import numpy as np
@@ -51,20 +50,3 @@ def predict_fees(players):
     model = load(MODEL)
     fees_millions = model.predict(inputs[list(model.feature_names_in_)])
     return players.assign(predicted_fee_eur=(fees_millions * 1e6).round(2))
-
-
-def main():
-    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("input_csv", type=Path)
-    parser.add_argument("output_csv", type=Path)
-    args = parser.parse_args()
-    if args.input_csv.resolve() == args.output_csv.resolve():
-        parser.error("Use a separate output CSV.")
-    try:
-        predict_fees(pd.read_csv(args.input_csv)).to_csv(args.output_csv, index=False)
-    except (ValueError, OSError) as error:
-        parser.error(str(error))
-
-
-if __name__ == "__main__":
-    main()

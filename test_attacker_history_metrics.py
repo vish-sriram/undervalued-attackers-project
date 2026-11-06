@@ -36,6 +36,3 @@ class MetricTests(unittest.TestCase):
         self.assertEqual(normalize('Yéremy Pino'),normalize('Yeremi Pino'))
         self.assertEqual(team_key('Brighton and Hove Albion'),team_key('Brighton'))
         self.assertNotEqual(normalize('Thierno Barry'),normalize('Thierno Baldé'))
-
-if __name__=='__main__':
-    unittest.main()
