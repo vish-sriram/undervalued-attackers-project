@@ -1,5 +1,3 @@
-"""Verify published fee-model and shortlist outputs without network access."""
-
 import json
 
 import numpy as np

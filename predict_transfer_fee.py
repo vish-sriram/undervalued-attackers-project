@@ -1,10 +1,3 @@
-"""Predict a Premier League transfer fee using the retained arrivals-only model.
-
-Input CSV columns: age_at_transfer, years_until_selling_contract_expiry,
-prior_season_minutes, total_xg, total_xt_added, is_winger (0 or 1),
-tournament_appearances, selling_club_league. Extra columns are preserved.
-"""
-
 from pathlib import Path
 
 import numpy as np

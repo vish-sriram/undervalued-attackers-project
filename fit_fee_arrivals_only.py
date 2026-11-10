@@ -1,5 +1,3 @@
-"""Refit the season-totals fee model on deals with a Premier League buyer."""
-
 import numpy as np
 import pandas as pd
 from joblib import dump
@@ -57,7 +55,6 @@ def fit(train):
 
 
 def refit(output=MODEL):
-    """Fit the bundled 2025 training deals and save the model."""
     deals = pd.read_csv(OUT / "model_deals.csv")
     train = deals[deals.window.eq("summer_2025")]
     model, _ = fit(train)

@@ -1,5 +1,3 @@
-"""Auditable event-derived metrics and uncertainty for the attacker cohort."""
-
 from collections import Counter
 import math
 import unicodedata
@@ -76,11 +74,6 @@ def team_key(name):
 
 
 def possession_entries(events):
-    """Count observed changes of on-ball actor, not touches or inferred carries.
-
-    This is an event-sequence proxy for the user's possession-change definition.
-    It includes recoveries from opponents. It is not a verified pass-recipient feed.
-    """
     counts = Counter()
     holder = None
     period = None
@@ -105,7 +98,6 @@ def possession_entries(events):
 
 
 def regulation_minutes(match):
-    """Count league minutes, capped at 90; unused substitutes get zero."""
     on_pitch = {}
     minutes = {}
     for side in ("home", "away"):
@@ -142,11 +134,6 @@ def regulation_minutes(match):
 
 
 def uncertainty(totals, minutes):
-    """Return a per-90 rate, match variation and cluster-by-match standard error.
-
-    Standard error needs at least five matches and 180 minutes. Missing estimates
-    remain None rather than implying zero uncertainty.
-    """
     totals = np.asarray(totals, dtype=float)
     minutes = np.asarray(minutes, dtype=float)
     valid = np.isfinite(totals) & np.isfinite(minutes) & (minutes > 0)
@@ -196,12 +183,6 @@ def risk_adjusted_rate(
     uncertainty_weight=1.0,
     volatility_weight=0.0,
 ):
-    """Configurable scenario, not a fitted or validated financial valuation.
-
-    Estimate prior_rate inside the training fold, by role. Tune the exposure
-    prior and penalty weights only on training/validation data. Missing SE must
-    remain missing rather than giving a low-exposure player zero risk.
-    """
     reliability = minutes / (minutes + prior_minutes)
     center = reliability * rate + (1 - reliability) * prior_rate
     adjusted = None
